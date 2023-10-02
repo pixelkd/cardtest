@@ -67,6 +67,13 @@
 
     scene.add(card);
     animate();
+
+    const frontCanvas = generateTextCanvas("Front");
+    const backCanvas = generateTextCanvas("Back");
+    document.body.appendChild(frontCanvas);
+    document.body.appendChild(backCanvas);
+    
+    
   </script>
 </body>
 </html>
