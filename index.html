@@ -34,6 +34,7 @@
 
     //Creating the card mesh
     const card = new THREE.Mesh(cardGeometry, cardMaterial);
+    card.position.set(0, 0, 0); 
 
     scene.add(card);
     animate();
