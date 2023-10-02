@@ -28,7 +28,7 @@
       const context = canvas.getContext("2d");
 
       // Background: white
-      cotext.fillStyle = "white"; 
+      context.fillStyle = "white"; 
       context.fillRect(0, 0, canvas.width, canvas.height);
 
       // Text: black
@@ -36,14 +36,14 @@
       context.font = "48px Arial";
       context.textAlign = "center";
       context.textBaseline = "middle"; 
-      context.fillText(text, canvase.width / 2, canvas.height / 2); 
+      context.fillText(text, canvas.width / 2, canvas.height / 2); 
 
       return canvas; 
     }
 
     //Create texture from canvas
-    const frontTexture = new THREE.CanvasTexture(generateTextCanvase("Front"));
-    const backTexture = new THREE.CanvasTexture(generateTextCanvase("Back"));
+    const frontTexture = new THREE.CanvasTexture(generateTextCanvas("Front"));
+    const backTexture = new THREE.CanvasTexture(generateTextCanvas("Back"));
 
     // Create materials using these textures
     const materialFront = new THREE.MeshBasicMaterial({ map: frontTexture, side: THREE.FrontSide }); 
