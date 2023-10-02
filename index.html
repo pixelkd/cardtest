@@ -21,14 +21,39 @@
     renderer.setSize(window.innerWidth, window.innerHeight); 
     document.body.appendChild(renderer.domElement);
 
+    function generateTextCanvas(text) {
+      const canvas = document.createElement("canvas");
+      canvas.width = 256; 
+      canvas.height = 128;
+      const context = canvas.getContext("2d");
+
+      // Background: white
+      cotext.fillStyle = "white"; 
+      context.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Text: black
+      context.fillStyle = "black";
+      context.font = "48px Arial";
+      context.textAlign = "center";
+      context.textBaseline = "middle"; 
+      context.fillText(text, canvase.width / 2, canvas.height / 2); 
+
+      return canvas; 
+    }
+
+    //Create texture from canvas
+    const frontTexture = new THREE.CanvasTexture(generateTextCanvase("Front"));
+    const backTexture = new THREE.CanvasTexture(generateTextCanvase("Back"));
+
+    // Create materials using these textures
+    const materialFront = new THREE.MeshBasicMaterial({ map: frontTexture, side: THREE.FrontSide }); 
+    const materialBack = new THREE.MeshBasicMaterial({ map: backTexture, side: THREE.BackSide}); 
+    
     // Create a card geometry
     const cardGeometry = new THREE.PlaneGeometry(9, 5); 
 
-    //Creating a material
-    const cardMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, side: THREE.DoubleSide});
-
     //Creating the card mesh
-    const card = new THREE.Mesh(cardGeometry, cardMaterial);
+    const card = new THREE.Mesh(cardGeometry, [materialFront, materialBack]);
     card.position.set(0, 0, 0); 
     
     function animate() {
