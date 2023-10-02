@@ -56,16 +56,10 @@
       renderer.render(scene, camera);
     }
 
-
-
     scene.add(card);
     animate();
-
-    const frontCanvas = generateTextCanvas("Front");
-    const backCanvas = generateTextCanvas("Back");
-    document.body.appendChild(frontCanvas);
-    document.body.appendChild(backCanvas);
-    
+    const testCanvas = generateTextCanvas("test");
+    document.body.appendChild(testCanvas);
     
   </script>
 </body>
