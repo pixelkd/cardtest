@@ -61,11 +61,13 @@
       requestAnimationFrame(animate);
       renderer.render(scene, camera);
     }
-
-    scene.add(card);
-    animate();
+    
     const testCanvas = generateTextCanvas("test");
     document.body.appendChild(testCanvas);
+    
+    scene.add(card);
+    animate();
+
     
   </script>
 </body>
