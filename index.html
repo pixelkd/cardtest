@@ -23,6 +23,17 @@
       requestAnimationFrame(animate);
       renderer.render(scene, camera);
     }
+
+    // Create a card geometry
+    const cardGeometry = new THREE.PlaneGeometry(9, 5); 
+
+    //Creating a material
+    const cardMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, side: THREE.DoubleSide});
+
+    //Creating the card mesh
+    const card = new THREE.Mesh(cardGeometry, cardMateriral);
+
+    scene.add(card);
     animate();
   </script>
 </body>
