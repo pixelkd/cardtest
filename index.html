@@ -44,8 +44,8 @@
             scene.add(dirLight);
 
             // Create card with plain red material
-            const geometry = new THREE.PlaneGeometry(5, 9);
-            const material = new THREE.MeshBasicMaterial({ color: 0xff0000, side: THREE.DoubleSide });
+            const geometry = new THREE.PlaneGeometry(9, 5);
+            const material = new THREE.MeshBasicMaterial({ color: 0xffffff, side: THREE.DoubleSide });
             card = new THREE.Mesh(geometry, material);
 
             scene.add(card);
