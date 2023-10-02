@@ -53,7 +53,9 @@
     const cardGeometry = new THREE.PlaneGeometry(9, 5); 
 
     //Creating the card mesh
-    const card = new THREE.Mesh(cardGeometry, [materialFront, materialBack]);
+    //const card = new THREE.Mesh(cardGeometry, [materialFront, materialBack]);
+    const simpleMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+    const card = new THREE.Mesh(cardGeometry, simpleMaterial);
     card.position.set(0, 0, 0); 
     
     function animate() {
